@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-labtest {
+    background-image: url('../images/bg-lab.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.labtest-searchbox {
+    width: 70%;
+    margin: auto;
+    padding-top: 180px;
+}
+
+@media screen and (max-width: 600px) {
+    .labtest-searchbox {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .contact-div {
+        border-left: 2px solid #dc3545;
+    }
+}
+
+nav #logo-name{
+    font-size: 40px;
+    font-weight: 400;
+    font-family: 'Caveat', cursive;
+}
+
+nav a{
+    color: black;
+}
+
+nav ul li{
+    margin: 7px 7px 0px 7px;
+}
+
+.footer-links li{
+    list-style-type: none;
+    text-align: center;
+}
+
+.footer-links li a{
+    color:white;
+    text-decoration: none;
+}
+
+footer .footer-section{
+    display: flex;
+    gap: 10px;
+}
+
+.footer-section > *{
+    flex-basis:100%;
+}
+
+.footer-contact > div{
+    text-align: center;
+}
+
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 10px;
+}
+
+.map-section{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+@media screen and (max-width: 769px){
+    footer .footer-section{
+        flex-wrap: wrap;
+    }
+    .footer-section > div{
+        margin: 10px 0;
+    }
+    .motto{
+        font-size: 30px;;
+    }
+}
+
+.doctor-cards{
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: -3px -3px 3px #8a817c;
+}
+
+nav .active{
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    transition: all 0.5s ease;
+    /* font-size: 1.2rem; */
+    font-weight: 500;
+}
+.copyright-section{
+    background-color: rgb(39, 37, 37);
+}

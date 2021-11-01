@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* :root ->to define variables */
+:root {
+  --black-color: #11101d;
+  --white-color: #fff;
+  --sky-color: #e4e9f7;
+  --light-black: #1d1b31;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  /* min-height:100%; */
+  width: 100%;
+  overflow: auto;
+  display: grid;
+}
+
+::selection {
+  color: var(--white-color);
+  background: var(--black-color);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 78px;
+  background: var(--black-color);
+  padding: 6px;
+  z-index: 99;
+  transform: all 0.5s ease;
+}
+
+/* To use in JS 
+For expanding the sidebar, */
+.sidebar.active {
+  width: 240px;
+}
+
+.sidebar .logo_content .logo {
+  color: var(--white-color);
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo {
+  opacity: 1;
+  pointer-events: none;
+}
+
+.logo_content .logo .logo_name {
+  font-size: 40px;
+  font-weight: 400;
+  font-family: "Caveat", cursive;
+}
+.sidebar #btn-ham {
+  position: absolute;
+  color: var(--white-color);
+  top: 6px;
+  left: 50%;
+  font-size: 22px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.sidebar.active #btn-ham {
+  left: 90%;
+}
+
+.sidebar ul {
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 5px 0;
+  list-style: none;
+  line-height: 50px;
+}
+
+.sidebar ul li a {
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 12px;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+}
+
+.sidebar ul li a:hover {
+  color: var(--black-color);
+  background-color: var(--white-color);
+}
+
+.sidebar ul li i {
+  font-size: 18px;
+  /* font-weight: 400; */
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.sidebar .links_name {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.sidebar.active .links_name {
+  transition: 0s;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.main_content {
+  position: absolute;
+  /* height:100%; */
+  min-height: 100vh;
+  width: calc(100%-78px);
+  left: 78px;
+  right: 0px;
+  background-color: var(--sky-color);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .main_content {
+  /* z-index: 90; */
+  width: calc(100%-240px);
+  left: 240px;
+}
+
+.main_content .text-current_page {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--light-black);
+  margin-bottom: 15px;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.dashboard-cards > * {
+  flex: 0 0 300px;
+  width: 300px;
+  /* height: 150px; */
+  /* background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%); */
+  /* background-color: var(--black-color); */
+  background-color: #9d4edd;
+  color: var(--white-color);
+  border-radius: 5px;
+  padding: 30px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1000px) {
+  .a-login {
+    width: 40%;
+    border-radius: 10px;
+  }
+}
+
+.log-main-div {
+  background-color: var(--sky-color);
+}
+
+.a-login {
+  background-color: var(--white-color);
+}
+
+.sidebar a::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0px;
+  left: 70px;
+  border-radius: 50px;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  display: none;
+}
+
+.sidebar a:hover::before {
+  display: flex;
+}
+
+.sidebar.active a:hover::before {
+  display: none;
+}
+
+.table-bordered .action {
+  min-width: 150px;
+}
